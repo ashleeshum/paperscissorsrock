@@ -1,6 +1,7 @@
 #paper scissors rock
 import random
 # list of valid inputs that user can enter
+valid_answer = ["y","n"]
 valid_choices = ["p","s","r"]
 # linking the p, s and r to the description
 psr_map = {"p" : "paper", "s" : "scissors", "r" : "rock"}
@@ -11,7 +12,7 @@ while user_play == "":
   # asking user if they want to play the game
   user_answer = input("do you want to play a game of paper scissors rock? type y for yes and n for no: ")
   # if statement to run the game if user says yes
-  if user_answer == "y":
+  if user_answer in valid_answer:
     # while loop for users choice if they didn't enter valid input
     while user_answer == "y":
       # asking user to choose either p s or r
@@ -23,6 +24,10 @@ while user_play == "":
     # if user didn't enter valid input then looped back to ask question again
      else:
        print("you haven't entered p s or r :/ try again: ")
-  else:
+  if user_answer == "n":
+    print("alright, byebye")
     break 
-print("alright, byebye")
+  else:
+    print("you didn't enter y or n. try again: ")
+
+
